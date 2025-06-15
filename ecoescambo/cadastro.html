@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoEscambo - Cadastro</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 400px; margin: 50px auto; }
+    input, button { display: block; width: 100%; margin-bottom: 10px; padding: 10px; }
+    #resposta { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Cadastro de Usuário</h2>
+
+  <form id="formCadastro">
+    <input type="text" id="nome" placeholder="Nome completo" required>
+    <input type="email" id="email" placeholder="E-mail" required>
+    <input type="password" id="senha" placeholder="Senha" required>
+    <button type="submit">Cadastrar</button>
+  </form>
+
+  <div id="resposta"></div>
+  <p>Já tem conta? <a href="index.html">Fazer login</a></p>
+
+  <script src="js/cadastro.js"></script>
+</body>
+</html>

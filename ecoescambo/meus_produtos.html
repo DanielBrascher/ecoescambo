@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoEscambo - Meus Produtos</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    form, .produto, .form-editar {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+
+    img {
+      max-width: 150px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      margin-right: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    input, textarea {
+      display: block;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 8px;
+    }
+
+    #resposta {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Meus Produtos</h2>
+
+  <form id="formAdicionarProduto">
+    <h3>Adicionar Novo Produto</h3>
+    <input type="text" id="nome" placeholder="Nome do produto" required>
+    <input type="text" id="imagem" placeholder="URL da imagem" required>
+    <textarea id="descricao" placeholder="Descrição" required></textarea>
+    <button type="submit" class="btn">Cadastrar Produto</button>
+  </form>
+
+  <div id="produtos"></div>
+  <div id="resposta"></div>
+
+  <script src="js/meus_produtos.js"></script>
+</body>
+</html>

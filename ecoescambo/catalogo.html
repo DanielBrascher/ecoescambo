@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoEscambo - Catálogo</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .produto {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background: #f9f9f9;
+      transition: box-shadow 0.2s;
+    }
+
+    .produto:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .produto img {
+      max-width: 150px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .interesse-btn, .toggle-detalhes {
+      margin-top: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .detalhes {
+      display: none;
+      background: #fff;
+      padding: 10px;
+      margin-top: 10px;
+      border-left: 3px solid #ccc;
+    }
+
+    .paginacao {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .paginacao button {
+      margin: 0 5px;
+      padding: 6px 10px;
+    }
+
+    #resposta {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Catálogo de Produtos</h2>
+
+  <div id="produtos"></div>
+
+  <div class="paginacao">
+    <button id="anterior">Anterior</button>
+    <span id="paginaAtual">1</span>
+    <button id="proxima">Próxima</button>
+  </div>
+
+  <div id="resposta"></div>
+
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoEscambo - Login</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body { font-family: sans-serif; max-width: 400px; margin: 50px auto; }
+    input, button { display: block; width: 100%; margin-bottom: 10px; padding: 10px; }
+    #resposta { color: red; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h2>EcoEscambo - Login</h2>
+
+  <form id="formLogin">
+    <input type="email" id="email" placeholder="E-mail" required>
+    <input type="password" autocomplete="off" id="senhaLogin" placeholder="Senha" required>
+    <button type="submit">Entrar</button>
+  </form>
+
+  <div id="resposta"></div>
+  <p>Ainda não é usuário? <a href="cadastro.html">Cadastrar</a></p>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
