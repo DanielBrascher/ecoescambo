@@ -19,6 +19,7 @@ $(document).ready(function () {
     }
   });
 
+<<<<<<< HEAD
   // Captura de clique nos botões "Propor" de forma segura
   $(document).on("click", ".propor-btn", function () {
     console.log("Botão 'Propor' clicado");
@@ -53,16 +54,52 @@ $(document).ready(function () {
         alert(erro);
       }
     });
+=======
+  $("#rejeitarTodas").click(function () {
+    const idInteressado = $("#interessado").val();
+
+    if (!idInteressado) {
+      alert("Selecione um interessado antes de rejeitar.");
+      return;
+    }
+
+    if (confirm("Tem certeza que deseja rejeitar todas as ofertas deste interessado?")) {
+      $.ajax({
+        url: "api/rejeitar_todas.php",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify({
+          id_produto: idProduto,
+          id_interessado: idInteressado
+        }),
+        success: function (resposta) {
+          alert(resposta.mensagem);
+          carregarInteressados();
+          $("#produtos-interessado").empty();
+        },
+        error: function () {
+          alert("Erro ao rejeitar todas as ofertas.");
+        }
+      });
+    }
+>>>>>>> abb42fb04635ace6127fc1f9b4bb129ebcf0196c
   });
 });
 
 function carregarProduto() {
   $.get("api/produto.php", { id: idProduto }, function (produto) {
     $("#produto-selecionado").html(`
+<<<<<<< HEAD
       <div class='produto-info'>
         <strong>produto do ${produto.nome_usuario}</strong>
+=======
+      <div class='card-produto'>
+>>>>>>> abb42fb04635ace6127fc1f9b4bb129ebcf0196c
         <img src='${produto.imagem}' />
-        <p>${produto.descricao}</p>
+        <section class="info-produto">
+          <h3>${produto.nome}</h3>
+          <p>${produto.descricao}</p>
+        </section>
       </div>
     `);
   }, "json");
@@ -81,6 +118,7 @@ function carregarInteressados() {
 }
 
 function carregarProdutosInteressado(idUsuario) {
+<<<<<<< HEAD
   $.get("api/produtos_do_usuario.php", { id_usuario: idUsuario }, function (produtos) {
     const container = $("#produtos-interessado");
     container.empty();
@@ -99,4 +137,22 @@ function carregarProdutosInteressado(idUsuario) {
       container.append(card);
     });
   }, "json");
+=======
+ $.get("api/produtos_do_usuario.php", { id_usuario: idUsuario }, function (produtos) {
+   const container = $("#produtos-interessado");
+   container.empty();
+   produtos.forEach(p => {
+     container.append(`
+       <div class='card-produto'>
+         <img src='${p.imagem}' />
+         <section class="info-produto">
+           <h3>${p.nome}</h3>
+           <p>${p.descricao}</p>
+           <button class='propor-btn'>Propor</button>
+         </section>
+       </div>
+     `);
+   });
+ }, "json");
+>>>>>>> abb42fb04635ace6127fc1f9b4bb129ebcf0196c
 }

@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Ofertas Recebidas</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <style>
-    body { font-family: Arial; max-width: 800px; margin: 30px auto; padding: 20px; }
-    .produto-info, .produto-oferta { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; background: #f9f9f9; }
-    img { max-width: 100px; display: block; margin-bottom: 10px; }
-    .produto-oferta { display: flex; justify-content: space-between; align-items: center; }
-    .propor-btn { padding: 8px 12px; background: #84cc16; border: none; color: white; cursor: pointer; border-radius: 5px; }
-  </style>
+ <meta charset="UTF-8">
+ <title>Ofertas Recebidas</title>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <link rel="stylesheet" href="../ecoescambo/css/ofertas.css">
+
 </head>
 <body>
-  <h2>Ofertas Recebidas</h2>
-  <div id="produto-selecionado"></div>
+ <header>Ofertas Recebidas</header>
+ <section class="espaco">
+   <section>
+     <h1>Meu Produto</h1>
+     <section>
+       <div id="produto-selecionado"></div>
+     </section>
+   </section>
 
-  <label for="interessado">Interessado:</label>
-  <select id="interessado"></select>
+   <section class="linha"></section>
+   <section class="distancia-para-cima">
+     <form>
+       <label for="interessado">Interessado:</label>
+       <select id="interessado" id="interessados" class="select-estilizado"></select>
+     </form>
+     <section class="botoes-acao">
+     <button id="rejeitarTodas" class="btn-interesse remover">Rejeitar todas as ofertas</button>
+</section>
+   </section>
 
-  <h3>Produtos do interessado:</h3>
-  <div id="produtos-interessado"></div>
-
-  <script src="js/ofertas.js"></script>
+   <h3>Produtos do interessado:</h3>
+   <section id="produtosInteresse" class="distancia-para-cima">
+     <div id="produtos-interessado"></div>
+   </section>
+ </section>
+ <script src="js/ofertas.js"></script>
 </body>
 </html>
